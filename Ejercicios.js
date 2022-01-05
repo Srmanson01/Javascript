@@ -1,11 +1,20 @@
-/*function miprimera() {
-console.log ("arroz")
+// 1 Ejercicio) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
 
-
+function Cadena(params) {
     
 }
 
-let impfunction = miprimera();
+function cadena() {
+    let palabra = 'Hola santiago'
+    console.log(palabra.length);
+}
+
+cadena();
+
+
+
+
+
 
 
 
