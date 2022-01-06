@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript repositorio 1</title>
-    
+    <title>Repositorio</title>
 </head>
+<body>
 
-</body>
+    <script>
 
-</html>
+        // 1 Ejercicio) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    
+        function cadena() {
+            let palabra = 'Hola Mundo'
+        console.log(palabra.length);}
+    
+        cadena() 
+       
+        //Array y arrow function
 
+        const name = ['Hola mundo'];
+        console.log (name.map(name => name .length));
+       
+      
+       //2 Ejercicio) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+    
+       (function(Palabra,Longitud){
+            console.log(Palabra.slice(Palabra,Longitud));
+        })("Hola mundo",4);
 
+        //3 Ejercicio) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal']
 
-
-
-   <script>
-
-    // 1 Ejercicio) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+        let saludo2 = "Hola que tal";
+            function Resolver2() {
+                console.log(saludo2.split(" "));
+                    } Resolver2();
 
         //4 Ejercicio) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
         
@@ -26,18 +43,63 @@
             console.log('Hola mundo' .repeat(3))
         } repetir();
 
+        //5 Ejercicio) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+
+        function Invertido(texto) {
+     return texto.split('').reverse().join('');
+        }
+        console.log(Invertido('Hola Mundo'));
+
+        //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+        const contarTexto = (cadena = "", palabra = undefined) => {
+        if (!cadena) return console.warn("No has ingresado frase para procesar");
+        if (!palabra) return console.warn("No has ingresado palabra a procesar");
+
+        regex = new RegExp(palabra, "g");
+        if (regex.test(cadena)) {
+            console.info(
+        `La palabra "${palabra}" se repite "${
+        cadena.match(regex).length
+        }" veces dentro de la frase`
+        );
+         } else {
+         return console.warn("La palabra no existe dentro de la frase");
+                }
+                };
+
+        
+        contarTexto();
+        contarTexto("hola mundo adios mundo");
+        contarTexto("", "mundo");
+        contarTexto("hola mundo adios mundo", "");
+        contarTexto("hola mundo adios mundo", "mundo");
+
+        //7 Ejercicio ) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+
+        const esPolindromo = (palabra = "") =>
+    !palabra
+    ? console.warn("por favor introduce una palabra")
+    : console.log(palabra === palabra.split("").reverse().join(""));
+
+    esPolindromo("salas");
+
+    //8 Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5". 
+
+            
+        
+
+        
 
 
+        
 
-
-
-
-   </script>
-
+    </script>
+        
     
-
+        
 
     
 </body>
-</html>
 
+</html>
