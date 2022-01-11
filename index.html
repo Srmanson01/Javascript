@@ -10,47 +10,75 @@
 
     <script>
 
-        // 1 Ejercicio) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    //1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
     
-        function cadena() {
-            let palabra = 'Hola Mundo'
+        function cadena(palabra) {
+            //let palabra = 'Hola Mundo'
         console.log(palabra.length);}
     
-        cadena() 
+        cadena('Hola mundo') 
+        cadena('Santiago') 
        
-        //Array y arrow function
+    //Array y arrow function
 
-        const name = ['Hola mundo'];
-        console.log (name.map(name => name .length));
+        const name = (palabra) => {
+            console.log(palabra.length)
+        }
+
+        name ('Buenas tardes');
+
+
+        
        
       
-       //2 Ejercicio) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+    //2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
     
-       (function(Palabra,Longitud){
+       function Caracteres (Palabra,Longitud){
             console.log(Palabra.slice(Palabra,Longitud));
-        })("Hola mundo",4);
+        } Caracteres ("Hola mundo",8);
 
-        //3 Ejercicio) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal']
+        
+        
+        const ArrowCaracter = (palabra,longitud) => {
+            console.log(palabra.slice(palabra,longitud));
 
-        let saludo2 = "Hola que tal";
-            function Resolver2() {
+        }
+        
+        ArrowCaracter ("Buen dia",2);
+
+
+    //3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal']
+
+        
+            function Resolver2 (saludo2) {
                 console.log(saludo2.split(" "));
-                    } Resolver2();
+            } 
+            Resolver2("Buenas tardes como estan");
 
-        //4 Ejercicio) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+            //Arrow functions
+            
+            const rest1 = (saludo2) => {
+                console.log(saludo2.split(""));
+            }
+
+            rest1 ("Muy buenas tardes");
+
+                    
+
+    //4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
         
         function repetir() {
             console.log('Hola mundo' .repeat(3))
         } repetir();
 
-        //5 Ejercicio) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+    //5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
 
         function Invertido(texto) {
-     return texto.split('').reverse().join('');
+            return texto.split('').reverse().join('');
         }
         console.log(Invertido('Hola Mundo'));
 
-        //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+    //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
 
         const contarTexto = (cadena = "", palabra = undefined) => {
         if (!cadena) return console.warn("No has ingresado frase para procesar");
@@ -75,7 +103,7 @@
         contarTexto("hola mundo adios mundo", "");
         contarTexto("hola mundo adios mundo", "mundo");
 
-        //7 Ejercicio ) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+    //7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
 
         const esPolindromo = (palabra = "") =>
     !palabra
@@ -84,7 +112,7 @@
 
     esPolindromo("salas");
 
-    //8 Ejercicio) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5".
+    //8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5".
 
 
     const patron = (cadena = "", patron="")=> { 
@@ -96,8 +124,338 @@
 
     patron ("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
 
-    //9 Ejercicio) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+    //9) Ejercicio) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+    
+    const NumeroAleatorio = ()=> console.log(Math.ceil(Math.random()*501)+600);
+    NumeroAleatorio();
 
+    //10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+
+    const capicua = (numero) =>
+            (Number.isInteger(numero) && numero.toString().split("").reverse().join("") === numero.toString())
+                ? true
+                : false;
+        /* Pruebas */
+        console.log(capicua(123));
+        console.log(capicua(2002));
+        console.log(capicua());
+        console.log(capicua("abc"));
+
+
+
+    
+    //11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+
+    const factorial = n => (n === 0 || n === 1) ? 1 : n * factorial(n - 1);
+
+    console.log( factorial(6) )
+
+    //12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+
+    const numeroPrimo= (numero = undefined)=>{
+    if(numero===undefined) return console.warn("no ingresaste el numero");
+    if(typeof numero !== "number") return console.warn("tiene que ser un numero entero");
+    if(Math.sign(numero)===-1) return console.error("no ingreses numeros negativos");
+    let residuosEnCero = 0;
+    for (let i = 1; i <= numero ; i++) {
+        if(numero % i === 0)
+            residuosEnCero++      
+    }
+    (residuosEnCero !== 2)       
+        ?console.log(`${numero} no es primo`)
+        :console.log(`${numero} si es primo`)
+    }
+        numeroPrimo(10);
+
+    /*13) Programa una función que determine si un número es par o impar, pe.
+    miFuncion(29) devolverá Impar.*/
+
+    const esPar = (numero=undefined)=>
+    (numero===undefined) 
+    ? console.warn("no ingresaste el numero")
+    :(typeof numero !== "number")
+        ?console.warn("Eso no es un numero, escribe bien!")
+        :(numero%2===0)
+            ? console.info(`${numero} es par`)
+            : console.info(`${numero} es impar`);
+        esPar(29);
+
+        /*14) Programa una función para convertir grados Celsius a Fahrenheit
+        y viceversa, pe. miFuncion(0,"C") devolverá 32°F */
+
+    const convertirGrados= (numero = undefined, grados = "") =>{
+    if(numero===undefined) return console.warn("no ingresaste cuantos grados convertir");
+    if(typeof numero !== "number") return console.warn(`"${numero}" no son numeros Celsius o Farenheit`)
+    if(!grados) return console.warn("no ingresaste si lo convertiras a Celsius o Fahrenheit");
+    if(typeof grados !== "string") return console.error(`"${grados}" no es una unidad C o F`);
+
+    (grados.toUpperCase()==="C")
+        ? console.info(`${numero}° Celsius son ${(numero*(9/5))+32} Fahrenheit`)
+        : (grados.toUpperCase()==="F")
+            ?console.info(`${numero}° Fahrenheit son ${((numero - 32)*(5/9)).toFixed(3)} Celsius`)
+            :console.warn("no ingreses otro valor que no sea C o F")
+    }
+    convertirGrados(0,"C");
+
+    /*15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.*/
+
+    const binarioDecimal = (numero = undefined, base = undefined) => {
+    if (numero === undefined) return console.warn("No se ha ingresado un número para convertir");
+    if (typeof numero !== "number") return console.error("El valor ingresado no es un número");
+    if (base === undefined) return console.warn("No se ha ingresado una base para la conversión");
+    if (typeof base !== "string") return console.error("El valor ingresado para la base no es un string");
+    if (base.length !== 1) return console.error("No se ha ingresado un carácter válido a la unidad para la conversión");
+
+    let resultadoB = numero.toString(2),
+        resultadoD = parseInt(numero, 2);
+
+    return (base.toUpperCase() === "B")
+        ?  console.log(`El número ${numero} en base decimal equivale a ${resultadoB} en base binaria`)
+        : (base.toUpperCase() === "D")
+            ? console.log(`El número ${numero} en base binaria equivale a ${resultadoD} en base decimal`)
+            : console.error("No se ha ingresado un carácter válido a la unidad para la conversión")
+    }
+
+    binarioDecimal();
+
+    //16) Programar una función que devuelva el monto final después de aplicar un descuento a una cantidad dada. Ejemplo: miFuncion(1000, 20) devolverá 800.
+
+    const descuento = (monto = undefined, descuento = undefined) => {   
+    
+        if (monto === undefined) return console.warn("No se ha ingresado un monto");
+    if (typeof monto !== "number") return console.error("El monto ingresado no es un número");
+	if (monto === 0) return console.error("El monto no puede ser 0");
+    if (Math.sign(monto) === -1) return console.error("El monto no puede ser negativo");
+    if (descuento === undefined) return console.warn("No se ha ingresado el descuento a aplicar");
+    if (typeof descuento !== "number") return console.error("El descuento ingresado no es un número");
+    if (Math.sign(descuento) === -1) return console.error("No se ha ingresado un descuento válido");
+    if (descuento === 0) return console.info(`No hay descuento. El monto total es ${monto}`);
+
+    let x = monto - ((descuento * monto) / 100);
+
+    return (descuento <= 100)
+        ? console.info(`El monto es de ${monto} con un descuento de ${descuento}. El monto total es de ${x}`)
+        : console.error("No se ha ingresado un descuento válido")
+    }
+
+    descuento();
+
+
+    /*17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020)*/
+
+
+
+
+
+    /*18 Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.*/
+
+    const numeroVocales =(cadena=undefined)=>cadena.match(/[aeiou]/gi).length;
+    const numeroCons =(cadena=undefined)=>cadena.match(/[ b, d, f, g, h, j, k, l, m, n, ñ, p, q, r, s, t, v, x, y, z.]/gi).length-1;
+
+    console.log(`Vocales: ${numeroVocales("Hola Mundo")} Consonantes ${numeroCons("Hola Mundo")}`)
+
+
+    /*19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.*/
+
+    const validarNombre = (texto = '') => {
+	if(!texto) return console.warn('No ingresaste texto')
+     if(typeof texto !== 'string') return console.error(`El valor ${texto} no es un texto`)
+			  
+	if(/\d/.test(texto)) return console.info(`El nombre ${texto} NO es válido!`)
+	if(/\W[áéíóú]/.test(texto)) return console.info(`El nombre ${texto} NO es válido!`)
+	if(texto) return console.info(`El nombre ${texto} SI es válido!`)
+            } 
+		  
+		  validarNombre('Santiago londoño')
+
+    /*20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.*/
+
+    const validarEmail = (email) =>{
+    const expReg2 = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
+    if (expReg2.test(email)) return "Verdadero";
+    return "Falso";
+    }
+    
+    console.log(validarEmail("renoxarmin10@gmail.com"));
+
+    /*21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].*/
+
+    const ElevaCuadrado = (array = undefined) => {
+     if (array instanceof Array) {
+         if (array.length === 0) return console.warn("Se ingreso un arreglo vacio");
+         cuadrados = []
+         array.forEach(element => {
+             cuadrado = element * element;
+             cuadrados.push(cuadrado);
+         });
+         console.info(`Arreglo original: ${array}`);
+         console.log(array)
+         console.info(`Arreglo cuadrados: ${cuadrados}`);
+         console.log(cuadrados)
+     } else {
+         return console.warn("No se ingreso un arreglo");
+     }
+        }
+
+    console.log(ElevaCuadrado)
+    ElevaCuadrado("hi");
+    ElevaCuadrado();
+    ElevaCuadrado([]);
+    ElevaCuadrado([1, 2, 3]);
+
+
+
+    /*22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].*/
+
+
+    const numMasAlto = (array = undefined) => {
+     if (array instanceof Array) {
+         if (array.length === 0) return console.warn("Se ingreso un arreglo vacio");
+         console.log(`Arreglo original: ${array} `);
+         array.sort();
+         masChico = array[0];
+         masGrande = array[array.length - 1];
+         console.log(`Numero mas chico: ${masChico}, Numero mas grande: ${masGrande}`);
+     } else {
+         return console.warn("No se ingreso un arreglo");
+     }
+ }
+
+ console.log()
+ 
+
+    
+
+
+    /*23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.*/
+    
+
+    const dividirParesNones = (array = undefined) => {
+     if (array instanceof Array) {
+         if (array.length === 0) return console.warn("Se ingreso un arreglo vacio");
+         const numeros = {
+             pares: [],
+             impares: []
+         }
+         for (let i = 0; i < array.length; i++) {
+             (array[i] % 2 == 0) ? numeros.pares.push(array[i]):
+                 numeros.impares.push(array[i]);
+         }
+         console.info(numeros);
+     } else {
+         return console.warn("No se ingreso un arreglo");
+     }
+        }
+
+    console.log()
+    dividirParesNones("hi");
+    dividirParesNones([]);
+    dividirParesNones([3, 2, 1, 6, 11, 8]);
+
+
+   /*Ejercicio 24)   Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros 
+ ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }*/
+
+    const OrdenamientoAscYDesc = (array = undefined) => {
+     if (array instanceof Array) {
+         if (array.length === 0) return console.warn("Se ingreso un arreglo vacio");
+         const numeros = {
+             ascendente: [],
+             descendente: []
+         }
+
+         numeros.ascendente = array.map((element) => element).sort((a, b) => a - b)
+         numeros.descendente = array.map((element) => element).sort((a, b) => b - a)
+         console.log(numeros);
+
+     } else {
+         return console.warn("No se ingreso un arreglo");
+     }
+        }
+
+
+    console.log()
+    OrdenamientoAscYDesc("hi");
+    OrdenamientoAscYDesc([]);
+    OrdenamientoAscYDesc([3, 2, 1, 6, 11, 8]);
+
+
+    
+     /*Ejercicio 25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true]  */
+
+    const EliminarDuplicados = (array = undefined) => {
+     if (array instanceof Array) {
+         if (array.length === 0) return console.warn("Se ingreso un arreglo vacio");
+         let valoresUnicos = []
+         array.forEach(element => {
+             if (!valoresUnicos.includes(element)) valoresUnicos.push(element);
+         });
+         console.log(valoresUnicos);
+     } else {
+         return console.warn("No se ingreso un arreglo");
+     }
+        }
+
+    console.log()
+    OrdenamientoAscYDesc("hi");
+    OrdenamientoAscYDesc([]);
+    EliminarDuplicados(["x", 10, "x", 2, "10", 10, true, true]);
+
+
+
+    // 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+
+    const promedio = (_arreglo = undefined) => {
+    if (_arreglo === undefined) return console.log(`No ingreso algun valor`);
+    if (!(_arreglo instanceof Array))
+        return console.log(`Debe ingresar un arreglo`);
+    if (_arreglo.length === 0)
+        return console.log(`No ingreso valores al arreglo`);
+    for (const valor of _arreglo) {
+    if (typeof valor !== "number")
+         return console.log(`Debe ingresar solo numeros`);
+    }
+    let suma = 0;
+    for (const valor of _arreglo) suma += valor;
+        console.log(
+                `El promedio de la suma del arreglo ${_arreglo} es ${
+            suma / _arreglo.length
+     }`
+  );
+};
+    promedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
+    promedio([]);
+    promedio(["a"]);
+    promedio(["a", 5]);
+    promedio([9, "a"]);
+    promedio([9, "a", 3, "b"]);
+
+
+
+    /*27) Programa una clase llamada Pelicula.
+
+    La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+  - Todos los datos del objeto son obligatorios.
+  - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+     7 restantes números.
+  - Valida que el título no rebase los 100 caracteres.
+  - Valida que el director no rebase los 50 caracteres.
+  - Valida que el año de estreno sea un número entero de 4 dígitos.
+  - Valida que el país o paises sea introducidos en forma de arreglo.
+  - Valida que los géneros sean introducidos en forma de arreglo.
+  - Valida que los géneros introducidos esten dentro de los géneros 
+     aceptados*.
+  - Crea un método estático que devuelva los géneros aceptados*.
+  - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+    decimal de una posición.
+  - Crea un método que devuelva toda la ficha técnica de la película.
+  - Apartir de un arreglo con la información de 3 películas genera 3 
+    instancias de la clase de forma automatizada e imprime la ficha técnica 
+    de cada película.
+
+    * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.*/
+
+    
     
         
 
